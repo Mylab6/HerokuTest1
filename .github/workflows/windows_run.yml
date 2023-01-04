@@ -22,9 +22,9 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
 
     - name: Run Test
-      run: dotnet test --logger:"trx;LogFilePath=dotnet-test-result.trx"
+      run: dotnet test --logger:"trx;LogFilePath=TestResults/dotnet-test-result.trx"
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action/composite@v2
       if: always()
       with:
-        trx_files: "TestResults/*.trx"
+        trx_files: "HerokuTest1/TestResults/*.trx"
