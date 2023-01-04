@@ -22,12 +22,6 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
 
     - name: Restore packages
-      run: msbuild .\dev\CustomMayd.Services.Serialization\CustomMayd.Services.Serialization.sln -t:restore
-
-    - name: Debug Build UWP app
-      run: msbuild .\dev\CustomMayd.Services.Serialization\CustomMayd.Services.Serialization.sln /p:Configuration=Debug /p:AppxBundlePlatforms="x86|x64|ARM" /p:AppxPackageDir=".\AppxPackages" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload
-      
-    - name: VSTest
-      run: vstest.console.exe /Platform:x64 .\test\CustomMayd.Services.Serialization.Tests\AppxPackages\CustomMayd.Services.Serialization.Tests_1.0.0.0_Debug_Test\CustomMayd.Services.Serialization.Tests_1.0.0.0_x86_Debug.appx
+      run: dotnet test
 
 
