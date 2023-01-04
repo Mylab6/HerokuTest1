@@ -20,16 +20,24 @@ namespace HerokuTest1
         }
 
         [Test]
-        public void test()
+        public void test6()
         {
-            driver.Url = "http://www.google.com";
-            Console.WriteLine(driver.CurrentWindowHandle); 
+            int n = 6; 
+            HerokuPageObject herokuPageObject = new HerokuPageObject(driver);
+            for (int i = 0; i < n; i++)
+            {
+                herokuPageObject.AddElementButton().Click(); 
+            }
         }
         [Test]
-        public void test2()
+        public void test10()
         {
-            driver.Url = "http://www.google.co.in";
-            Console.WriteLine(driver.CurrentWindowHandle);
+            int n = 10;
+            HerokuPageObject herokuPageObject = new HerokuPageObject(driver);
+            for (int i = 0; i < n; i++)
+            {
+                herokuPageObject.AddElementButton().Click();
+            }
         }
         [TearDown]
         public void closeBrowser()
