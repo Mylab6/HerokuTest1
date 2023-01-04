@@ -23,5 +23,10 @@ namespace HerokuTest1
 
 
         }
+        public System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> ListOfDeleteButtons()
+        {
+
+            return this.driver.FindElements(By.ClassName("added-manually"));
+        }
     }
 }

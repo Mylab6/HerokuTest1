@@ -20,25 +20,29 @@ namespace HerokuTest1
         }
 
         [Test]
-        public void test6()
+        public void test3()
         {
-            int n = 6; 
-            HerokuPageObject herokuPageObject = new HerokuPageObject(driver);
-            for (int i = 0; i < n; i++)
-            {
-                herokuPageObject.AddElementButton().Click(); 
-            }
+            int n = 3;
+            AddAndCount(n);
         }
         [Test]
-        public void test10()
+        public void test5()
         {
-            int n = 10;
+            int n = 5;
+            AddAndCount(n);
+        }
+
+        private void AddAndCount(int n)
+        {
             HerokuPageObject herokuPageObject = new HerokuPageObject(driver);
             for (int i = 0; i < n; i++)
             {
                 herokuPageObject.AddElementButton().Click();
             }
+            int numberOfDeleteButtons = herokuPageObject.ListOfDeleteButtons().Count;
+            Assert.AreEqual(n, numberOfDeleteButtons);
         }
+
         [TearDown]
         public void closeBrowser()
         {
