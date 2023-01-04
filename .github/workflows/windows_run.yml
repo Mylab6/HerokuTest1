@@ -24,7 +24,7 @@ jobs:
     - name: Run Test
       run: dotnet test --logger:"trx;LogFilePath=dotnet-test-result.trx"
     - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
+      uses: EnricoMi/publish-unit-test-result-action/composite@v2
       if: always()
       with:
         trx_files: "TestResults/*.trx"
