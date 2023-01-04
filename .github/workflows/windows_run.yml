@@ -1,8 +1,8 @@
 name: CI UWP
 
 on: [push]
-env:
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+#env:
+#  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 jobs:
   build:
 
